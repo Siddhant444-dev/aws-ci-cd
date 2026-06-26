@@ -1,4 +1,4 @@
-FROM openjdk:21
+FROM oeclipse-temurin:21-jdk
 WORKDIR /app
 COPY ./target/course-service.jar /app
 EXPOSE 8080
