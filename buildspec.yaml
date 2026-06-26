@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto21   # ✅ Force JDK 21
+      java: corretto21   # ✅ Force JDK 21 LTS
   pre_build:
     commands:
       - echo Using Java version...
@@ -21,6 +21,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
+      # ✅ Build directly with the ECR URI so Docker knows the tag exists locally
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
