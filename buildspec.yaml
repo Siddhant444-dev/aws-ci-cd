@@ -4,7 +4,6 @@ phases:
   install:
     runtime-versions:
       java: corretto21   # ✅ Force JDK 21
-      docker: 20         # Optional, safe to keep
   pre_build:
     commands:
       - echo Using Java version...
